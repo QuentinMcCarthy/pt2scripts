@@ -6,7 +6,7 @@ CG1pbmVfZGlnAQAAAAVrZXkuMQEAAAASdG93bi53aW5kb3cuaXNvcGVuCGNvbnN0YW50BARtaW5lEgAA
 :local int tab
 :global int finish
 
-key.1()
+key.d()
 
 isopen("mine")
 
