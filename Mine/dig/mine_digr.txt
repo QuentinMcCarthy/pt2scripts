@@ -1,0 +1,28 @@
+CW1pbmVfZGlncgAAAAABAAAAEnRvd24ud2luZG93Lmlzb3Blbghjb25zdGFudAQEbWluZQoAAAAOZ2xvYmFsLmludC5zZXQIY29uc3RhbnQEBmZpbmlzaAhjb25zdGFudAIAAAAADWxvY2FsLmludC5zZXQIY29uc3RhbnQEBGRpZ3gIY29uc3RhbnQCAwAAAA1sb2NhbC5pbnQuc2V0CGNvbnN0YW50BARkaWd5CGNvbnN0YW50AgMAAAAIbWluZS5kaWcNbG9jYWwuaW50LmdldAhjb25zdGFudAQEZGlneA1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BARkaWd5DWxvY2FsLmludC5zZXQIY29uc3RhbnQEBGRpZ3gOYXJpdGhtZXRpYy5pbnQNbG9jYWwuaW50LmdldAhjb25zdGFudAQEZGlneAhjb25zdGFudAQBLQhjb25zdGFudAIBAAAADmdlbmVyaWMuZ290b2lmCGNvbnN0YW50AgQAAAAOY29tcGFyaXNvbi5pbnQNbG9jYWwuaW50LmdldAhjb25zdGFudAQEZGlneAhjb25zdGFudAQCPj0IY29uc3RhbnQCAAAAAA1sb2NhbC5pbnQuc2V0CGNvbnN0YW50BARkaWd4CGNvbnN0YW50AgMAAAANbG9jYWwuaW50LnNldAhjb25zdGFudAQEZGlneQ5hcml0aG1ldGljLmludA1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BARkaWd5CGNvbnN0YW50BAEtCGNvbnN0YW50AgEAAAAOZ2VuZXJpYy5nb3RvaWYIY29uc3RhbnQCBAAAAA5jb21wYXJpc29uLmludA1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BARkaWd5CGNvbnN0YW50BAI+PQhjb25zdGFudAICAAAADmdsb2JhbC5pbnQuc2V0CGNvbnN0YW50BAZmaW5pc2gIY29uc3RhbnQCAQAAAA==
+
+:local int digx
+:local int digy
+:global int finish
+
+isopen("mine")
+
+; This script isn't finished yet
+finish = 0
+
+; Mine from bottom right to middle left
+digx = 3
+digy = 3
+
+; Loop through X and Y here
+dig(digx, digy)
+digx = digx - 1
+gotoif(4, digx >= 0)
+; End X loop
+
+digx = 3
+digy = digy - 1
+gotoif(4, digy >= 2)
+; End Y loop
+
+; Tell the parent script that this script is finished
+finish = 1

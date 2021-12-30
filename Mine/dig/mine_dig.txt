@@ -1,0 +1,55 @@
+CG1pbmVfZGlnAQAAAAVrZXkuMQEAAAASdG93bi53aW5kb3cuaXNvcGVuCGNvbnN0YW50BARtaW5lEgAAAA1sb2NhbC5pbnQuc2V0CGNvbnN0YW50BAN0YWIIY29uc3RhbnQCAQAAAAhtaW5lLnRhYg1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BAN0YWINbG9jYWwuaW50LnNldAhjb25zdGFudAQEZGlneAhjb25zdGFudAIAAAAADWxvY2FsLmludC5zZXQIY29uc3RhbnQEBGRpZ3kIY29uc3RhbnQCAAAAAA9nZW5lcmljLmV4ZWN1dGUIY29uc3RhbnQECW1pbmVfZGlncghtaW5lLmRpZw1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BARkaWd4DWxvY2FsLmludC5nZXQIY29uc3RhbnQEBGRpZ3kNbG9jYWwuaW50LnNldAhjb25zdGFudAQEZGlneA5hcml0aG1ldGljLmludA1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BARkaWd4CGNvbnN0YW50BAErCGNvbnN0YW50AgEAAAAOZ2VuZXJpYy5nb3RvaWYIY29uc3RhbnQCBgAAAA5jb21wYXJpc29uLmludA1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BARkaWd4CGNvbnN0YW50BAI8PQhjb25zdGFudAIDAAAADWxvY2FsLmludC5zZXQIY29uc3RhbnQEBGRpZ3gIY29uc3RhbnQCAAAAAA1sb2NhbC5pbnQuc2V0CGNvbnN0YW50BARkaWd5DmFyaXRobWV0aWMuaW50DWxvY2FsLmludC5nZXQIY29uc3RhbnQEBGRpZ3kIY29uc3RhbnQEASsIY29uc3RhbnQCAQAAAA5nZW5lcmljLmdvdG9pZghjb25zdGFudAIGAAAADmNvbXBhcmlzb24uaW50DWxvY2FsLmludC5nZXQIY29uc3RhbnQEBGRpZ3kIY29uc3RhbnQEAjw9CGNvbnN0YW50AgEAAAARZ2VuZXJpYy53YWl0dW50aWwOY29tcGFyaXNvbi5pbnQOZ2xvYmFsLmludC5nZXQIY29uc3RhbnQEBmZpbmlzaAhjb25zdGFudAQCPT0IY29uc3RhbnQCAQAAAA1sb2NhbC5pbnQuc2V0CGNvbnN0YW50BANkaWcLdGVybmFyeS5pbnQObWluZS5oYXNMYXllcnMIY29uc3RhbnQCAQAAAAhjb25zdGFudAIAAAAADW1pbmUubmV3bGF5ZXIOZ2VuZXJpYy5nb3RvaWYIY29uc3RhbnQCAwAAAA5jb21wYXJpc29uLmludA1sb2NhbC5pbnQuZ2V0CGNvbnN0YW50BANkaWcIY29uc3RhbnQEAj09CGNvbnN0YW50AgEAAAANbG9jYWwuaW50LnNldAhjb25zdGFudAQDdGFiDmFyaXRobWV0aWMuaW50DWxvY2FsLmludC5nZXQIY29uc3RhbnQEA3RhYghjb25zdGFudAQBKwhjb25zdGFudAIBAAAADmdlbmVyaWMuZ290b2lmCGNvbnN0YW50AgIAAAAOY29tcGFyaXNvbi5pbnQNbG9jYWwuaW50LmdldAhjb25zdGFudAQDdGFiCGNvbnN0YW50BAI8PQhjb25zdGFudAIMAAAADGdsb2JhbC51bnNldAhjb25zdGFudAQGZmluaXNo
+
+:local int dig
+:local int digy
+:local int digx
+:local int tab
+:global int finish
+
+key.1()
+
+isopen("mine")
+
+; The script attempts to dig all squares before
+; generating new layers
+; This is to help prevent worker conflicts
+; There is still a miniscule chance a worker will
+; generate a new layer before/at the same time as
+; the script, causing lost layers
+
+; Always start at the first tab
+tab = 1
+tab(tab)
+
+; Dig from top left to middle right
+digx = 0
+digy = 0
+
+; Run script to dig from bottom right to middle left
+execute("mine_digr")
+
+; Loop through X and Y here
+dig(digx, digy)
+digx = digx + 1
+gotoif(6, digx <= 3)
+; End X loop
+
+digx = 0
+digy = digy + 1
+gotoif(6, digy <= 1)
+; End Y loop
+
+; Wait until the child script is finished before continuing
+waituntil(finish == 1)
+
+; Keep digging if the tab still has layers
+dig = ternary.int(hasLayers(), 1, 0)
+newlayer()
+gotoif(3, dig == 1)
+
+; Otherwise go to the next tab
+tab = tab + 1
+gotoif(2, tab <= 12)
+
+; Unset the global var to keep things clean :3
+gu("finish")

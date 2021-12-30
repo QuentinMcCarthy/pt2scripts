@@ -1,0 +1,10 @@
+CWlucHV0X2RlYwEAAAAFa2V5LjIBAAAAEnRvd24ud2luZG93Lmlzb3Blbghjb25zdGFudAQMaGVhZHF1YXJ0ZXJzAQAAAA5nbG9iYWwuaW50LnNldAhjb25zdGFudAQIaW5wdXRkZWMLdGVybmFyeS5pbnQOY29tcGFyaXNvbi5pbnQOZ2xvYmFsLmludC5nZXQIY29uc3RhbnQECGlucHV0ZGVjCGNvbnN0YW50BAI+PQhjb25zdGFudAIJAAAACGNvbnN0YW50AgAAAAAOYXJpdGhtZXRpYy5pbnQOZ2xvYmFsLmludC5nZXQIY29uc3RhbnQECGlucHV0ZGVjCGNvbnN0YW50BAErCGNvbnN0YW50AgEAAAA=
+
+:global int inputdec
+
+key.2()
+
+isopen("headquarters")
+
+; Rotate through positions
+inputdec = if(inputdec >= 9, 0, inputdec + 1)

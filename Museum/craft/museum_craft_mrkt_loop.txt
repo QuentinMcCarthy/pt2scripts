@@ -1,0 +1,13 @@
+Fm11c2V1bV9jcmFmdF9tcmt0X2xvb3ABAAAABWtleS4yAQAAABJ0b3duLndpbmRvdy5pc29wZW4IY29uc3RhbnQEBm11c2V1bQQAAAALbXVzZXVtLmZpbGwIY29uc3RhbnQBARBtdXNldW0uYnV5TWFya2V0EWdsb2JhbC5zdHJpbmcuZ2V0CGNvbnN0YW50BAdtdXNfZWxlCGNvbnN0YW50AmMAAAAObXVzZXVtLmNvbWJpbmUIY29uc3RhbnQCAAAAAAxnZW5lcmljLmdvdG8IY29uc3RhbnQCAQAAAA==
+
+:global string mus_ele
+
+key.2()
+
+isopen("museum")
+
+; Buy and combine the given element gem on loop
+fill(true)
+buyMarket(mus_ele, 99)
+combine(0)
+goto(1)

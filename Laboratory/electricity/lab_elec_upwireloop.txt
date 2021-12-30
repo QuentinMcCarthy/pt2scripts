@@ -1,0 +1,10 @@
+E2xhYl9lbGVjX3Vwd2lyZWxvb3AAAAAAAAAAAAQAAAANbG9jYWwuaW50LnNldAhjb25zdGFudAQBaQhjb25zdGFudAIAAAAADWdlbmVyaWMuY2xpY2sOdmVjLmZyb21Db29yZHMRYXJpdGhtZXRpYy5kb3VibGUOc2NyZWVuLndpZHRoLmQIY29uc3RhbnQEASoIY29uc3RhbnQDZmZmZmZm5j8RYXJpdGhtZXRpYy5kb3VibGUPc2NyZWVuLmhlaWdodC5kCGNvbnN0YW50BAEqCGNvbnN0YW50AzMzMzMzM9M/DWxvY2FsLmludC5zZXQIY29uc3RhbnQEAWkOYXJpdGhtZXRpYy5pbnQNbG9jYWwuaW50LmdldAhjb25zdGFudAQBaQhjb25zdGFudAQBKwhjb25zdGFudAIBAAAADmdlbmVyaWMuZ290b2lmCGNvbnN0YW50AgIAAAAOY29tcGFyaXNvbi5pbnQNbG9jYWwuaW50LmdldAhjb25zdGFudAQBaQhjb25zdGFudAQCPD0IY29uc3RhbnQCBQAAAA==
+
+:local int i
+
+#upwire vec(width.d() * 0.7, height.d() * 0.3)
+
+i = 0
+click({upwire})
+i = i + 1
+gotoif(2, i <= 5)
