@@ -1,8 +1,8 @@
-:global int inputdec
+:global int numdec
 
 key.2()
 
 isopen("headquarters")
 
 ; Rotate through positions
-inputdec = if(inputdec >= 9, 0, inputdec + 1)
+numdec = if(numdec >= 9, 0, numdec + 1)
